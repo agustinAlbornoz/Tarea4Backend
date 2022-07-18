@@ -9,6 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", router);
 app.use(express.static(__dirname +"/public"))
 
-app.listen(8080, () => {
-    console.log("Servidor corriendo en el puerto 8080");
-});
+const server = app.listen(8080, () => console.log(`Server running on port 8080`))
+server.on('error', (err) => {
+console.log(`el servidor tuvo un error: ${error}`)})
